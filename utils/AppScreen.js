@@ -1,9 +1,13 @@
 import React from "react";
 import { Box } from "native-base";
 import { StyleSheet, Text, TouchableOpacity } from "react-native";
-const AppScreen = ({ children }) => {
+const AppScreen = ({ children, full = false }) => {
   return (
-    <Box flex="1" style={styles.container} safeArea>
+    <Box
+      flex="1"
+      style={full ? styles.FullContainer : styles.container}
+      safeArea
+    >
       {children}
     </Box>
 
@@ -20,5 +24,10 @@ const styles = StyleSheet.create({
     width: "90%",
     alignSelf: "center",
     marginBottom: 100,
+  },
+  FullContainer: {
+    width: "100%",
+    alignSelf: "center",
+    backgroundColor: "#22A940",
   },
 });

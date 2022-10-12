@@ -5,6 +5,8 @@ import { NativeBaseProvider, Text } from "native-base";
 
 import Tab from "./components/tab";
 import StackHome from "./screens/StackHome";
+import ReportScreen from "./screens/ReportScreen";
+import ProfileScreen from "./screens/ProfileScreen";
 
 export default function App() {
   const [isHomescreen, setIsHomescreen] = React.useState(false);
@@ -12,12 +14,16 @@ export default function App() {
   return (
     <NativeBaseProvider>
       {/* <NavigationContainer> */}
-      {!isHomescreen ? (
+      {/* {!isHomescreen ? (
         <HomeScreen setIsHomescreen={setIsHomescreen} />
       ) : (
-        // <Tab />
+     
         <StackHome />
-      )}
+      )} */}
+
+      {/* <ReportScreen /> */}
+      <ProfileScreen />
+
       {/* </NavigationContainer> */}
     </NativeBaseProvider>
   );

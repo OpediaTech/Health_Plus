@@ -1,7 +1,7 @@
 import { StyleSheet, Button, Text, Image } from "react-native";
 import React from "react";
 
-import { createStackNavigator } from "@react-navigation/stack";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import Running from "./Running";
 import { NavigationContainer } from "@react-navigation/native";
 import { Heading, View } from "native-base";
@@ -11,7 +11,7 @@ import RunnScreen from "./RunnScreen";
 import ReportScreen from "./ReportScreen";
 // import { Button } from "native-base";
 
-const Stack = createStackNavigator();
+const Tab = createBottomTabNavigator();
 
 function LogoTitle() {
   return <Heading>Running</Heading>;
@@ -20,12 +20,12 @@ function WeekTitle() {
   return <Heading size="md">Week 1 - Day 2</Heading>;
 }
 
-const StackHome = () => {
+const TabReport = () => {
   return (
     <NavigationContainer>
-      {/* <Text>StackHome</Text> */}
-      <Stack.Navigator>
-        <Stack.Screen
+      {/* <Text>TabHome</Text> */}
+      <Tab.Navigator>
+        <Tab.Screen
           name="running"
           component={Running}
           options={{
@@ -38,7 +38,7 @@ const StackHome = () => {
             ),
           }}
         />
-        <Stack.Screen
+        <Tab.Screen
           name="Day2"
           component={WeekDay2}
           options={{
@@ -51,14 +51,14 @@ const StackHome = () => {
             ),
           }}
         />
-        <Stack.Screen
+        <Tab.Screen
           name="walk"
           component={WalkScreen}
           options={{
             headerTitle: (props) => <Text></Text>,
           }}
         />
-        <Stack.Screen
+        <Tab.Screen
           name="run"
           component={RunnScreen}
           options={{
@@ -71,7 +71,7 @@ const StackHome = () => {
             ),
           }}
         />
-        <Stack.Screen
+        <Tab.Screen
           name="report"
           component={ReportScreen}
           options={{
@@ -84,11 +84,11 @@ const StackHome = () => {
             ),
           }}
         />
-      </Stack.Navigator>
+      </Tab.Navigator>
     </NavigationContainer>
   );
 };
 
-export default StackHome;
+export default TabReport;
 
 const styles = StyleSheet.create({});

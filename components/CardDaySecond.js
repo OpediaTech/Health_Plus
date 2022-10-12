@@ -28,7 +28,7 @@ const CardDaySecond = () => {
     <View style={styles.container}>
       <TouchableOpacity
         onPress={() => {
-          navigation.navigate("walk");
+          navigation.navigate("report");
         }}
       >
         <Box mt={5} w={80} alignSelf="center" rounded="md" shadow={3}>
